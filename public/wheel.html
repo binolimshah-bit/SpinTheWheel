@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin the Wheel | ZooTechX</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-gradient"></div>
+
+    <!-- Header -->
+    <header>
+        <a href="https://www.zootechx.com" target="_blank" class="logo-link">
+            <img src="Logo.jpg" alt="ZooTechX" class="logo-img">
+        </a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="wheel-card" id="wheelCard">
+            <h2 class="wheel-heading">Your Turn to Spin!</h2>
+            <p class="wheel-subheading">Click the button below to spin</p>
+            
+            <div class="user-info">
+                <p><strong id="displayName"></strong> | <span id="displayEmail"></span></p>
+            </div>
+
+            <!-- Wheel Container -->
+            <div class="wheel-container-large">
+                <div class="wheel-pointer"></div>
+                <canvas id="wheelCanvas" width="600" height="600"></canvas>
+            </div>
+
+            <button class="btn-primary btn-spin" id="spinButton">
+                🎡 Spin the Wheel
+            </button>
+        </div>
+    </main>
+
+    <!-- Result Popup -->
+    <div id="resultPopup" class="popup-overlay hidden">
+        <div class="popup-card">
+            <div class="confetti-container" id="confettiContainer"></div>
+            <h2 class="popup-title">🎉 You Won!</h2>
+            <p class="popup-text" id="popupText">
+                Congratulations! You got <span id="discountValue">15</span>% OFF on <span id="domainValue">Chatbots</span>!
+            </p>
+            <div class="coupon-code" id="couponCode">ZTX-CBOT15</div>
+            <p class="popup-subtext">
+                ✅ Your coupon code has been sent to your email!
+            </p>
+            <button class="btn-primary" id="closePopup">OK</button>
+        </div>
+    </div>
+
+    <!-- Error Popup -->
+    <div id="errorPopup" class="popup-overlay hidden">
+        <div class="popup-card error-card">
+            <h2 class="popup-title">Oops!</h2>
+            <p class="popup-text" id="errorText">
+                You have already spun the wheel with this email address.
+            </p>
+            <button class="btn-primary" id="closeError">OK</button>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="wheel.js"></script>
+</body>
+</html>

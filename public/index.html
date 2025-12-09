@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin the AI Wheel | ZooTechX</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-gradient"></div>
+
+    <!-- Header -->
+    <header>
+        <a href="https://www.zootechx.com" target="_blank" class="logo-link">
+            <img src="Logo.jpg" alt="ZooTechX" class="logo-img">
+        </a>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="content-card" id="formCard">
+            <h1 class="main-heading">Spin the AI Wheel</h1>
+            <p class="subheading">Win discounts on next-gen AI solutions.</p>
+
+            <!-- User Form -->
+            <form id="userDetailsForm" class="spin-form">
+                <div class="form-group">
+                    <label for="userName">Your Name</label>
+                    <input 
+                        type="text" 
+                        id="userName" 
+                        name="userName" 
+                        placeholder="Enter your name" 
+                        required
+                        autocomplete="name"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="userEmail">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="userEmail" 
+                        name="userEmail" 
+                        placeholder="your.email@example.com" 
+                        required
+                        autocomplete="email"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="userPhone">Phone Number</label>
+                    <input 
+                        type="tel" 
+                        id="userPhone" 
+                        name="userPhone" 
+                        placeholder="+91 XXXXX XXXXX" 
+                        pattern="[+]?[0-9]{10,13}"
+                        required
+                        autocomplete="tel"
+                    >
+                </div>
+                <button type="submit" class="btn-primary" id="continueButton">
+                    Continue to Spin
+                </button>
+            </form>
+
+            <p class="disclaimer">
+                <small>One spin per email. Coupon will be sent to your email address.</small>
+            </p>
+        </div>
+    </main>
+
+    <!-- Result Popup -->
+    <div id="resultPopup" class="popup-overlay hidden">
+        <div class="popup-card">
+            <div class="confetti-container" id="confettiContainer"></div>
+            <h2 class="popup-title">You Won!</h2>
+            <p class="popup-text" id="popupText">
+                You got <span id="discountValue">15</span>% OFF on <span id="domainValue">Chatbots</span>.
+            </p>
+            <div class="coupon-code" id="couponCode">ZTX-CBOT15</div>
+            <p class="popup-subtext">
+                Your coupon will be sent to your phone via SMS.
+            </p>
+            <button class="btn-primary" id="closePopup">OK</button>
+        </div>
+    </div>
+
+    <!-- Error Popup -->
+    <div id="errorPopup" class="popup-overlay hidden">
+        <div class="popup-card error-card">
+            <h2 class="popup-title">Oops!</h2>
+            <p class="popup-text" id="errorText">
+                You have already spun the wheel with this phone number.
+            </p>
+            <button class="btn-primary" id="closeError">OK</button>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
